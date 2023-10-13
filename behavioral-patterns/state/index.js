@@ -1,0 +1,10 @@
+"use strict";
+exports.__esModule = true;
+var Budget_1 = require("./Budget");
+var budgetValue = 300;
+var budgetQty = 2;
+var budgetClass = new Budget_1.Budget(budgetValue, budgetQty);
+budgetClass.approves();
+budgetClass.ends();
+budgetClass.applyExtraDiscount();
+console.log("Desconto extra de: ", budgetClass.value);
