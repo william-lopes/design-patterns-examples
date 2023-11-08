@@ -1,0 +1,12 @@
+"use strict";
+exports.__esModule = true;
+var generateOrder_1 = require("./commands/generateOrder");
+var saveOrderDB_1 = require("./OrderActions/saveOrderDB");
+var sendEmailOrder_1 = require("./OrderActions/sendEmailOrder");
+var budgetValue = 300;
+var budgetQty = 2;
+var clientName = "Wal";
+var order = new generateOrder_1.generateOrder(budgetValue, budgetQty, clientName);
+order.addOrderAction(new saveOrderDB_1.SaveOrderDB());
+order.addOrderAction(new sendEmailOrder_1.SendEmailOrder());
+order.execute();
